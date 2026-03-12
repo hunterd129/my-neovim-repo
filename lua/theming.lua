@@ -1,4 +1,4 @@
-
+--catppuccin theme & transparency
 require("lazy").setup({
 	{
 		"catppuccin/nvim",
