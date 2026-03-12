@@ -27,16 +27,12 @@ require("keymaps")
 require("theming")
 
 --Syntax Hightlighting--
-
 vim.cmd('syntax enable')
 
-
 --status bar--
-
 vim.opt.laststatus = 3
 
 --transparency--
-
 local highlights = {
     "Normal", "NormalNC", "SignColumn", "StatusLine", "StatusLineNC", "EndOfBuffer"
 }
