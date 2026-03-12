@@ -19,6 +19,7 @@ vim.o.relativenumber = true
 vim.o.cursorline = true
 vim.o.termguicolors = true
 vim.g.have_nerd_font = true
+vim.opt.scrolloff = 8
 
 --tab sizing
 vim.opt.tabstop = 4
