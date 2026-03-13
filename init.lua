@@ -31,7 +31,7 @@
     require("keymaps")
 
 --Plugin theme--
-    require("theming")
+    require("plugins")
 
 --Syntax Hightlighting--
     vim.cmd('syntax enable')
