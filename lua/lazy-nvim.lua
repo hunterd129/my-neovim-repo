@@ -47,7 +47,17 @@ require("lazy").setup({
     {
      'nvim-treesitter/nvim-treesitter',
       lazy = false,
-      build = ':TSUpdate'
+      build = ':TSUpdate',
+      config = function()
+          vim.opt.runtimepath:append(vim.fn.stdpath("data") .. "/site")
+          require('nvim-treesitter.install').compilers = { "zig" }
+          require('nvim-treesitter').setup({
+              ensure_installed = { "lua", "rust", "vim", "vimdoc", "query" },
+              highlight = {
+                  enable = true,
+              },
+          })
+      end
     },
 --Smear cursor
     {
