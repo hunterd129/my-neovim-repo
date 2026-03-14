@@ -1,19 +1,29 @@
-                    -- Keymaps
+                    --Keymaps Config--
 
--- Set leader to space
+--Set leader to space--
     vim.g.mapleader = " "
 
--- Toggle Project View (EX) with <Leader>pv
+--Toggle Project View--
     vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
--- Sidebar explorer (Lex) with <Leader>e
+--Sidebar explorer--
     vim.keymap.set("n", "<leader>e", ":Lex 30<CR>")
---Normal mode toggle
+--Normal mode toggle--
     vim.keymap.set("i", "jj", "<Esc>")
     vim.keymap.set("i", "kk", "<Esc>")
 
+--Split keybindings--
+    vim.keymap.set("n", "<leader>vs", ":vsplit<CR>", { desc = "vertical split" })
+    vim.keymap.set("n", "<leader>hs", ":split<CR>", { desc = "Horizontal split" })
+    vim.keymap.set("n", "<leader><CR>", ":close<CR>", { desc = "close current window" })
 
--- Netrw Aesthetic Tweaks
+--Split motion keybindings--
+    vim.keymap.set("n", "<C-h>", "<C-w>h") -- Move left
+    vim.keymap.set("n", "<C-j>", "<C-w>j") -- Move down
+    vim.keymap.set("n", "<C-k>", "<C-w>k") -- Move up
+    vim.keymap.set("n", "<C-l>", "<C-w>l") -- Move right
+
+--Netrw Aesthetic Tweaks--
     vim.g.netrw_banner = 0		-- Hide help banner
     vim.g.netrw_winsize = 25	-- Side window width
     vim.g.netrw_liststyle = 3	-- Tree view

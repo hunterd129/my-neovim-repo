@@ -1,18 +1,4 @@
 						--Neovim Config--
---Bootstrap lazy.nvim
-    local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-    if not vim.loop.fs_stat(lazypath) then
-    	vim.fn.system({
-    		"git",
-    		"clone",
-    		"--filter=blob:none",
-    		"https://github.com/folke/lazy.nvim.git",
-    		"--branch=stable",
-    		lazypath,
-    	})
-    end
-    vim.opt.rtp:prepend(lazypath)
-
 --basic appearance--
     vim.o.number = true 
     vim.o.relativenumber = true
@@ -21,17 +7,17 @@
     vim.g.have_nerd_font = true
     vim.opt.scrolloff = 8
 
---tab sizing
+--tab sizing--
     vim.opt.tabstop = 4
     vim.opt.shiftwidth = 4
     vim.opt.expandtab = true
     vim.opt.softtabstop = 4
 
---Keybindings
+--Keybindings--
     require("keymaps")
 
---Plugin theme--
-    require("plugins")
+--Lazy nvim plugins--
+    require("lazy-nvim")
 
 --Syntax Hightlighting--
     vim.cmd('syntax enable')
