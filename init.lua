@@ -1,10 +1,10 @@
 						--Neovim Config--
 
 --Basic neovim settings--
-    require("basics")
+    require("Basics")
 --Keybindings--
-    require("keymaps")
+    require("Keymaps")
 
 --Lazy nvim plugins--
-    require("lazy-nvim")
+    require("Lazy")
 
