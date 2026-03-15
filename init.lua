@@ -2,6 +2,7 @@
 
 --Basic neovim settings--
     require("Basics")
+    
 --Keybindings--
     require("Keymaps")
 
