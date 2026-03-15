@@ -18,6 +18,8 @@
 
 --Lazy nvim plugins--
     require("lazy-nvim")
+    vim.g.loaded_netrw = 1
+    vim.g.loaded_netrwPlugin = 1
 
 --Syntax Hightlighting--
     vim.cmd('syntax enable')

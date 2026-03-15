@@ -14,8 +14,9 @@
     end
     vim.opt.rtp:prepend(lazypath)
 
---Catppuccin theme & transparency--
+--Lazy.nvim plugins--
 require("lazy").setup({
+--Catppuccin theme & transparency--
     {
         "catppuccin/nvim",
         name = "catppuccin",
@@ -23,7 +24,13 @@ require("lazy").setup({
         config = function()
             require("catppuccin").setup({
                 flavour = "mocha",
-                transparent_background = true, -- Native transparency handling
+                transparent_background = true,
+                integrations = {
+                    mini = {
+                        enabled = true,
+                        indentscope_color = "rosewater",
+                    },
+                },
             })
             vim.cmd.colorscheme("catppuccin")
         end
@@ -31,33 +38,18 @@ require("lazy").setup({
 --Lualine--
     {
         'nvim-lualine/lualine.nvim',
-        dependencies = { 'nvim-tree/nvim-web-devicons' },
+        dependencies = { 'mini.icons' },
         config = function()
             require('lualine').setup({
                 options = {
-                    theme = 'catppuccin-mocha', 
+                    icons_enabled = true,
+                    theme = 'auto', 
                     component_separators = { left = '', right = ''}, 
                     section_separators = { left = '', right = ''},
                     globalstatus = true,
                 }
             })
         end
-    },
---Treesitter--
-    {
-     'nvim-treesitter/nvim-treesitter',
-      lazy = false,
-      build = ':TSUpdate',
-      config = function()
-          vim.opt.runtimepath:append(vim.fn.stdpath("data") .. "/site")
-          require('nvim-treesitter.install').compilers = { "zig" }
-          require('nvim-treesitter').setup({
-              ensure_installed = { "lua", "rust", "vim", "vimdoc", "query" },
-              highlight = {
-                  enable = true,
-              },
-          })
-      end
     },
 --Smear cursor
     {
@@ -74,5 +66,67 @@ require("lazy").setup({
         end,
         opts = {
         }
-    }
+    },
+--Mini icons
+    {
+        'echasnovski/mini.icons',
+        lazy = false,
+        opts = {},
+        init = function()
+            package.preload['nvim-web-devicons'] = function()
+                require('mini.icons').mock_nvim_web_devicons()
+                return package.loaded['nvim-web-devicons']
+            end
+        end,
+    },
+--Mini files
+    {
+        'echasnovski/mini.files',
+        version = false,
+        lazy = false,
+        opts = {
+            windows = {
+                preview = true,
+                width_focus = 30,
+                width_preview = 30,
+            },
+            options = {
+                use_as_default_explorer = true,
+            },
+        },
+        keys = {
+            
+            {
+                "<leader>e",
+                function() require('mini.files').open(vim.api.nvim_buf_get_name(0), true) end,
+                desc = "open mini.files (Directory of current file)"
+            },
+        },
+    },
+--Snacks.nvim
+    {
+        "folke/snacks.nvim",
+        priority = 1000,
+        lazy = false,
+        opts = {
+            bigfile = { enabled = true },
+            dashboard = { enabled = true },
+            indent = { enabled = true },
+            notifier = { enabled = true },
+            picker = { enabled = true },
+            scroll = { enabled = true },
+        },
+        keys = {
+            {
+                "<leader>pv",
+                function()
+                    Snacks.picker.files({
+                        layout = "vertical",
+                        fullscreen = true,
+                    })
+                end,
+                desc = "Project Files (Snacks Picker)",
+            },
+        },
+    },
 })
