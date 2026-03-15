@@ -22,9 +22,3 @@
     vim.keymap.set("n", "<C-j>", "<C-w>j") -- Move down
     vim.keymap.set("n", "<C-k>", "<C-w>k") -- Move up
     vim.keymap.set("n", "<C-l>", "<C-w>l") -- Move right
-
---Netrw Aesthetic Tweaks--
-    vim.g.netrw_banner = 0		-- Hide help banner
-    vim.g.netrw_winsize = 25	-- Side window width
-    vim.g.netrw_liststyle = 3	-- Tree view
-
