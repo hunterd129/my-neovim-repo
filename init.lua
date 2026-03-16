@@ -1,11 +1,13 @@
 						--Neovim Config--
+--Leader key
+vim.g.mapleader = " "
 
---Basic neovim settings--
-    require("Basics")
-    
 --Keybindings--
     require("Keymaps")
 
 --Lazy nvim plugins--
     require("Lazy")
+ 
+--Basic neovim settings--
+    require("Basics")
 

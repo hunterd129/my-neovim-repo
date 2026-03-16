@@ -1,8 +1,4 @@
                     --Keymaps Config--
-
---Set leader to space--
-    vim.g.mapleader = " "
-
 --Toggle Project View--
     vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
