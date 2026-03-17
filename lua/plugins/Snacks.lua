@@ -18,7 +18,7 @@ return {
                 enabled = true,
             },
         },
-        notifier = { enabled = false },
+        notifier = { enabled = true },
         picker = { enabled = true },
         scroll = { enabled = true },
     },
