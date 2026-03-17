@@ -1,9 +1,20 @@
                     --Keymaps Config--
---Toggle Project View--
-    vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+--Keymaps Config
+local map = vim.keymap.set
+
+--Project view
+map("n", "<leader>pv", function()
+	require("snacks").picker.files({
+        	layout = "vertical",
+        	fullscreen = true,
+    })
+end, { desc = "Project Files (Snacks)" })
 
 --Sidebar explorer--
-    vim.keymap.set("n", "<leader>e", ":Lex 30<CR>")
+map("n", "<leader>e", function()
+    require('mini.files').open(vim.api.nvim_buf_get_name(0), true)
+end, { desc = "Open mini.files" })
+
 --Normal mode toggle--
     vim.keymap.set("i", "jj", "<Esc>")
     vim.keymap.set("i", "kk", "<Esc>")

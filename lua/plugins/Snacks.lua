@@ -22,19 +22,6 @@ return {
         picker = { enabled = true },
         scroll = { enabled = true },
     },
-    keys = {
-        {
-
-            "<leader>pv",
-            function()
-                Snacks.picker.files({
-                    layout = "vertical",
-                    fullscreen = true,
-                })
-            end,
-            desc = "Project Files (Snacks Picker)",
-        },
-    },
 }
 
 
