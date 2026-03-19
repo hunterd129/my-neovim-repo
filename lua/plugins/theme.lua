@@ -2,7 +2,6 @@
 return {
 
 --Catppuccin theme & transparency
---[[        
     {
         "catppuccin/nvim",
         name = "catppuccin",
@@ -21,7 +20,6 @@ return {
             vim.cmd.colorscheme("catppuccin")
         end
     },
---]]    
 --Smear cursor
     {
         "sphamba/smear-cursor.nvim",
@@ -29,6 +27,8 @@ return {
     },
 
     {
+--TODO: add a func to hotswap colourscheme
+    --will fix later
         "folke/tokyonight.nvim",
         lazy = false,
         priority = 1000,
@@ -41,7 +41,7 @@ return {
                     floats = "dark",
                 },
             })
-            vim.cmd([[colorscheme tokyonight-night]])
+            --vim.cmd.colorscheme("tokyonight-night")
         end,
     }
 
