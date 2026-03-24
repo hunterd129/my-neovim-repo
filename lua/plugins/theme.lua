@@ -1,6 +1,5 @@
 --General appearance
 return {
-
 --Catppuccin theme & transparency
     {
         "catppuccin/nvim",

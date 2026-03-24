@@ -1,5 +1,5 @@
---Mini icons
 return {
+--Mini icons
     {
         'echasnovski/mini.icons',
         lazy = false,

@@ -3,11 +3,11 @@
 vim.g.mapleader = " "
 
 --Keybindings--
-    require("Keymaps")
+require("Keymaps")
 
 --Lazy nvim plugins--
-    require("Lazy")
+require("Lazy")
  
 --Basic neovim settings--
-    require("Basics")
+require("Basics")
 
