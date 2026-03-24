@@ -1,4 +1,5 @@
 return {
+--Noice.nvim
     "folke/noice.nvim",
     event = "VeryLazy",
     dependencies = {
